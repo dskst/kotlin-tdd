@@ -1,9 +1,9 @@
-package dskst.kotlin.tdd.money
+package dskst.tdd.money
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 
-class JUnit5ExampleTest {
+class MoneyTest {
 
     @Test
     fun testMultiplication() {
