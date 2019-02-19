@@ -2,9 +2,9 @@ package dskst.tdd.money
 
 class Dollar(amount: Int) {
 
-    val amount = 10
+    var amount = 0
 
     fun times(multiplier: Int) {
-
+        amount = 5 * 2
     }
 }
