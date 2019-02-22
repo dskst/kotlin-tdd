@@ -9,6 +9,11 @@ class Dollar(amount: Int) {
     }
 
     override fun equals(any: Any?): Boolean {
-        return true
+
+        if (any is Dollar) {
+            return amount == any.amount
+        }
+
+        return false
     }
 }
