@@ -13,4 +13,9 @@ class MoneyTest {
         product = five.times(3)
         assertEquals(15, product.amount)
     }
+
+    @Test
+    fun testEquality() {
+        assertTrue(Dollar(5).equals(Dollar(5)))
+    }
 }
