@@ -8,10 +8,10 @@ class Dollar(amount: Int) {
         return Dollar(amount * multiplier)
     }
 
-    override fun equals(any: Any?): Boolean {
+    override fun equals(other: Any?): Boolean {
 
-        if (any is Dollar) {
-            return amount == any.amount
+        if (other is Dollar) {
+            return amount == other.amount
         }
 
         return false
