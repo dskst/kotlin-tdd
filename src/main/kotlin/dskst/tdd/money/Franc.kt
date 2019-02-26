@@ -1,15 +1,15 @@
 package dskst.tdd.money
 
-class Dollar(amount: Int) {
+class Franc(amount: Int) {
 
     private var amount = amount
 
-    fun times(multiplier: Int): Dollar {
-        return Dollar(amount * multiplier)
+    fun times(multiplier: Int): Franc {
+        return Franc(amount * multiplier)
     }
 
     override fun equals(other: Any?): Boolean {
-        if (other is Dollar) {
+        if (other is Franc) {
             return amount == other.amount
         }
         return false
