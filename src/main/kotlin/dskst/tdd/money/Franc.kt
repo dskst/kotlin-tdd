@@ -1,6 +1,6 @@
 package dskst.tdd.money
 
-class Franc(amount: Int) {
+class Franc(amount: Int):Money() {
 
     private var amount = amount
 
