@@ -1,4 +1,5 @@
 package dskst.tdd.money
 
-open class Money {
+open class Money(amount: Int) {
+    protected var amount: Int = amount
 }
