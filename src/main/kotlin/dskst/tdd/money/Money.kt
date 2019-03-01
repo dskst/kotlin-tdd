@@ -6,6 +6,7 @@ open class Money(amount: Int) {
     override fun equals(other: Any?): Boolean {
         if (other is Money) {
             return amount == other.amount
+                    && this::class == other::class
         }
         return false
     }
