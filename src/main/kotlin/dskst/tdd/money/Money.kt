@@ -10,6 +10,10 @@ abstract class Money(amount: Int) {
         fun dollar(amount: Int): Dollar {
             return Dollar(amount)
         }
+
+        fun franc(amount: Int): Franc {
+            return Franc(amount)
+        }
     }
 
     override fun equals(other: Any?): Boolean {
