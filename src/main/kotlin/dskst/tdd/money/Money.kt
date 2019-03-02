@@ -1,7 +1,13 @@
 package dskst.tdd.money
 
-open class Money(amount: Int) {
+abstract class Money(amount: Int) {
     protected var amount: Int = amount
+
+    companion object {
+        fun dollar(amount: Int): Dollar {
+            return Dollar(amount)
+        }
+    }
 
     override fun equals(other: Any?): Boolean {
         if (other is Money) {
@@ -9,11 +15,5 @@ open class Money(amount: Int) {
                     && this::class == other::class
         }
         return false
-    }
-
-    companion object {
-        fun dollar(amount: Int): Dollar {
-            return Dollar(amount)
-        }
     }
 }
