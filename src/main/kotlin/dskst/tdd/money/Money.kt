@@ -10,4 +10,10 @@ open class Money(amount: Int) {
         }
         return false
     }
+
+    companion object {
+        fun dollar(amount: Int): Dollar {
+            return Dollar(amount)
+        }
+    }
 }
