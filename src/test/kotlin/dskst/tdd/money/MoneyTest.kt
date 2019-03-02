@@ -8,17 +8,17 @@ class MoneyTest {
     @Test
     fun testMultiplication() {
         val five = Money.dollar(5)
-        assertEquals(Dollar(10), five.times(2))
-        assertEquals(Dollar(15), five.times(3))
+        assertEquals(Money.dollar(10), five.times(2))
+        assertEquals(Money.dollar(15), five.times(3))
     }
 
     @Test
     fun testEquality() {
-        assertTrue(Dollar(5).equals(Dollar(5)))
-        assertFalse(Dollar(5).equals(Dollar(6)))
+        assertTrue(Money.dollar(5).equals(Money.dollar(5)))
+        assertFalse(Money.dollar(5).equals(Money.dollar(6)))
         assertTrue(Franc(5).equals(Franc(5)))
         assertFalse(Franc(5).equals(Franc(6)))
-        assertFalse(Dollar(5).equals(Franc(5)))
+        assertFalse(Money.dollar(5).equals(Franc(5)))
     }
 
     @Test
