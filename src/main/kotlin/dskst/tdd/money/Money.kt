@@ -4,7 +4,7 @@ abstract class Money(amount: Int) {
 
     protected var amount: Int = amount
 
-    abstract fun currency(): String
+    protected var currency: String = ""
 
     abstract fun times(multiplier: Int): Money
 
@@ -16,6 +16,10 @@ abstract class Money(amount: Int) {
         fun franc(amount: Int): Franc {
             return Franc(amount)
         }
+    }
+
+    fun currency(): String {
+        return currency
     }
 
     override fun equals(other: Any?): Boolean {

@@ -2,10 +2,8 @@ package dskst.tdd.money
 
 class Dollar(amount: Int):Money(amount) {
 
-    private val currency = "USD"
-
-    override fun currency(): String {
-        return currency
+    init {
+        this.currency = "USD"
     }
 
     override fun times(multiplier: Int): Money {
