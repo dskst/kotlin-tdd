@@ -4,6 +4,8 @@ abstract class Money(amount: Int) {
 
     protected var amount: Int = amount
 
+    abstract fun currency(): String
+
     abstract fun times(multiplier: Int): Money
 
     companion object {
