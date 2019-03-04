@@ -10,7 +10,7 @@ abstract class Money(amount: Int) {
 
     companion object {
         fun dollar(amount: Int): Dollar {
-            return Dollar(amount)
+            return Dollar(amount, "USD")
         }
 
         fun franc(amount: Int): Franc {

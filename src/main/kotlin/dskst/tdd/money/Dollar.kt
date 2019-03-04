@@ -1,12 +1,12 @@
 package dskst.tdd.money
 
-class Dollar(amount: Int):Money(amount) {
+class Dollar(amount: Int, currency: String):Money(amount) {
 
     init {
-        this.currency = "USD"
+        this.currency = currency
     }
 
     override fun times(multiplier: Int): Money {
-        return Dollar(amount * multiplier)
+        return dollar(amount * multiplier)
     }
 }
