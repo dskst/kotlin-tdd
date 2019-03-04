@@ -14,7 +14,7 @@ abstract class Money(amount: Int) {
         }
 
         fun franc(amount: Int): Franc {
-            return Franc(amount)
+            return Franc(amount, "")
         }
     }
 
