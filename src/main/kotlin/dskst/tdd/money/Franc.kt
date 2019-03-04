@@ -3,10 +3,10 @@ package dskst.tdd.money
 class Franc(amount: Int, currency: String):Money(amount) {
 
     init {
-        this.currency = "CHF"
+        this.currency = currency
     }
 
     override fun times(multiplier: Int): Money {
-        return Franc(amount * multiplier, "")
+        return franc(amount * multiplier)
     }
 }
