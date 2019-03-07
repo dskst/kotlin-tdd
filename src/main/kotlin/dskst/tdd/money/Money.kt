@@ -1,10 +1,10 @@
 package dskst.tdd.money
 
-abstract class Money(amount: Int) {
+abstract class Money(amount: Int, currency: String) {
 
-    protected var amount: Int = amount
+    protected val amount: Int = amount
 
-    protected var currency: String = ""
+    private val currency: String = currency
 
     abstract fun times(multiplier: Int): Money
 
