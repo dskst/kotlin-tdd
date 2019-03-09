@@ -2,20 +2,20 @@ package dskst.tdd.money
 
 open class Money(amount: Int, currency: String) {
 
-    protected val amount: Int = amount
+    private val amount: Int = amount
 
-    protected val currency: String = currency
+    private val currency: String = currency
 
     open fun times(multiplier: Int): Money {
-        return Money(multiplier, "")
+        return Money(amount * multiplier, currency)
     }
 
     companion object {
-        fun dollar(amount: Int, currency: String = ""): Dollar {
+        fun dollar(amount: Int): Dollar {
             return Dollar(amount, "USD")
         }
 
-        fun franc(amount: Int, currency: String = ""): Franc {
+        fun franc(amount: Int): Franc {
             return Franc(amount, "CHF")
         }
     }
