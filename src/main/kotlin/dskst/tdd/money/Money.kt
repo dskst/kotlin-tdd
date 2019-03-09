@@ -1,19 +1,21 @@
 package dskst.tdd.money
 
-abstract class Money(amount: Int, currency: String) {
+open class Money(amount: Int, currency: String) {
 
     protected val amount: Int = amount
 
-    private val currency: String = currency
+    protected val currency: String = currency
 
-    abstract fun times(multiplier: Int): Money
+    open fun times(multiplier: Int): Money {
+        return Money(multiplier, "")
+    }
 
     companion object {
-        fun dollar(amount: Int): Dollar {
+        fun dollar(amount: Int, currency: String = ""): Dollar {
             return Dollar(amount, "USD")
         }
 
-        fun franc(amount: Int): Franc {
+        fun franc(amount: Int, currency: String = ""): Franc {
             return Franc(amount, "CHF")
         }
     }
@@ -22,11 +24,15 @@ abstract class Money(amount: Int, currency: String) {
         return currency
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (other is Money) {
-            return amount == other.amount
-                    && this::class == other::class
+    override fun equals(money: Any?): Boolean {
+        if (money is Money) {
+            return amount == money.amount
+                    && currency().equals(money.currency())
         }
         return false
+    }
+
+    override fun toString(): String {
+        return "$amount $currency"
     }
 }
