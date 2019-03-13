@@ -1,5 +1,0 @@
-package dskst.tdd.money
-
-class Franc(amount: Int, currency: String):Money(amount, currency) {
-
-}
