@@ -2,6 +2,7 @@ package dskst.tdd.money
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
+import kotlin.coroutines.RestrictsSuspension
 
 class MoneyTest {
 
@@ -23,5 +24,11 @@ class MoneyTest {
     fun testCurrency() {
         assertEquals("USD", Money.dollar(1).currency())
         assertEquals("CHF", Money.franc(1).currency())
+    }
+
+    @Test
+    fun testSimpleAddition() {
+        val sum = Money.dollar(5).plus(Money.dollar(5))
+        assertEquals(Money.dollar(10), sum)
     }
 }

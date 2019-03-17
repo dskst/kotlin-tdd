@@ -35,4 +35,8 @@ open class Money(amount: Int, currency: String) {
     override fun toString(): String {
         return "$amount $currency"
     }
+
+    fun plus(addend: Money): Money {
+        return Money(amount + addend.amount, currency)
+    }
 }
