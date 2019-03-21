@@ -1,6 +1,6 @@
 package dskst.tdd.money
 
-open class Money(amount: Int, currency: String) {
+open class Money(amount: Int, currency: String): Expression {
 
     private val amount: Int = amount
 
@@ -36,7 +36,7 @@ open class Money(amount: Int, currency: String) {
         return "$amount $currency"
     }
 
-    fun plus(addend: Money): Money {
+    fun plus(addend: Money): Expression {
         return Money(amount + addend.amount, currency)
     }
 }
