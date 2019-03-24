@@ -2,7 +2,7 @@ package dskst.tdd.money
 
 open class Money(amount: Int, currency: String): Expression {
 
-    private val amount: Int = amount
+    val amount: Int = amount
 
     private val currency: String = currency
 
