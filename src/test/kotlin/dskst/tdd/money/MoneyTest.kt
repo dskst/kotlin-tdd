@@ -26,11 +26,18 @@ class MoneyTest {
     }
 
     @Test
+    fun testPlusReturnsSum() {
+        val five = Money.dollar(5)
+        val result = five.plus(five)
+        val sum = result as Sum
+        assertEquals(five, sum.augend)
+        assertEquals(five, sum.addend)
+    }
+
+    @Test
     fun testSimpleAddition() {
         val five = Money.dollar(5)
         val sum = five.plus(five)
-        assertEquals(Money.dollar(10), sum)
-
         val bank = Bank()
         val reduced = bank.reduce(sum, "USD")
         assertEquals(Money.dollar(10), reduced)

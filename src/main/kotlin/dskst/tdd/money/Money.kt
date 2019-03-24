@@ -37,6 +37,6 @@ open class Money(amount: Int, currency: String): Expression {
     }
 
     fun plus(addend: Money): Expression {
-        return Money(amount + addend.amount, currency)
+        return Sum(this, addend)
     }
 }
