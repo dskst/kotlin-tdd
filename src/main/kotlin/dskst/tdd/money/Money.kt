@@ -39,4 +39,8 @@ open class Money(amount: Int, currency: String): Expression {
     fun plus(addend: Money): Expression {
         return Sum(this, addend)
     }
+
+    override fun reduce(to: String): Money {
+        return this
+    }
 }
