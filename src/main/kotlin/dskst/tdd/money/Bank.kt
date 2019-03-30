@@ -2,8 +2,10 @@ package dskst.tdd.money
 
 class Bank {
 
-    fun addRate(from: String, to: String, rate: Int) {
+    private val rates: MutableMap<Pair, Int> = hashMapOf()
 
+    fun addRate(from: String, to: String, rate: Int) {
+        rates[Pair(from, to)] = rate
     }
 
     fun rate(from: String, to: String): Int {
