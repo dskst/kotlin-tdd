@@ -19,6 +19,11 @@ class MoneyTest {
     }
 
     @Test
+    fun testIdentityRate() {
+        assertEquals(1, Bank().rate("USD", "USD"))
+    }
+
+    @Test
     fun testMultiplication() {
         val five = Money.dollar(5)
         assertEquals(Money.dollar(10), five.times(2))

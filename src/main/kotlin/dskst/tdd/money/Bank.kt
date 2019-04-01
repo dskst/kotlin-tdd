@@ -1,5 +1,7 @@
 package dskst.tdd.money
 
+import java.lang.IllegalArgumentException
+
 class Bank {
 
     private val rates: MutableMap<Pair, Int> = hashMapOf()
@@ -9,7 +11,10 @@ class Bank {
     }
 
     fun rate(from: String, to: String): Int {
-        return if(from == "CHF" && to == "USD") 2 else 1
+        if (from == to) {
+            return 1
+        }
+        return rates[Pair(from, to)] ?: throw IllegalArgumentException()
     }
 
     fun reduce(source: Expression, to: String): Money {
