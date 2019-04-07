@@ -6,7 +6,7 @@ open class Money(amount: Int, currency: String): Expression {
 
     private val currency: String = currency
 
-    open fun times(multiplier: Int): Money {
+    open fun times(multiplier: Int): Expression {
         return Money(amount * multiplier, currency)
     }
 
@@ -36,7 +36,7 @@ open class Money(amount: Int, currency: String): Expression {
         return "$amount $currency"
     }
 
-    fun plus(addend: Money): Expression {
+    override fun plus(addend: Expression): Expression {
         return Sum(this, addend)
     }
 
