@@ -1,10 +1,10 @@
 package dskst.tdd.money
 
-class Sum(augend: Money, addend: Money): Expression {
+class Sum(augend: Expression, addend: Expression): Expression {
 
-    val augend: Money = augend
+    val augend: Expression = augend
 
-    val addend: Money = addend
+    val addend: Expression = addend
 
     override fun reduce(bank: Bank, to: String): Money {
         val amount = augend.reduce(bank, to).amount + addend.reduce(bank, to).amount
