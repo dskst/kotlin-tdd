@@ -7,7 +7,7 @@ class Sum(augend: Expression, addend: Expression): Expression {
     val addend: Expression = addend
 
     override fun plus(addend: Expression): Expression {
-        TODO("Please write when you need it")
+        return Sum(this, addend)
     }
 
     override fun reduce(bank: Bank, to: String): Money {
