@@ -6,7 +6,7 @@ open class Money(amount: Int, currency: String): Expression {
 
     private val currency: String = currency
 
-    open fun times(multiplier: Int): Expression {
+    override fun times(multiplier: Int): Expression {
         return Money(amount * multiplier, currency)
     }
 
